@@ -53009,4 +53009,23 @@ a.text-muted:hover {
 .dark-mode .border-dark {
   border-color: #4b545c !important;
 }
-/*# sourceMappingURL=adminlte.css.map */
+/* Default Light Mode */
+body {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #1e1e2d;
+  color: #ffffff;
+}
+
+.navbar-light.dark-mode {
+  background-color: #333;
+  color: #ffffff;
+}
+
+.sidebar-light-primary.dark-mode {
+  background-color: #2e2e3d;
+}

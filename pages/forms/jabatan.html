@@ -16,7 +16,7 @@
 <div class="wrapper">
   
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-light">
+  <nav class="main-header navbar navbar-expand navbar-dark">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -29,10 +29,9 @@
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
-     
-
-     
-     
+      <li class="nav-item">
+        <a class="nav-link" href="#" id="darkModeToggle"><i class="fas fa-moon"></i> Dark Mode</a>
+      </li> 
   </nav>
   <!-- /.navbar -->
 
@@ -91,15 +90,17 @@
             <li class="nav-header">MENU KARYAWAN</li>
             <li class="nav-item">
               <a href="../forms/karyawan.html" class="nav-link">
-                <span class="info-box-icon elevation-1"><i class="fas fa-users"></i></span>
+                <span class="info-box-icon elevation"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
+                  <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1zm-7.978-1L7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002-.014.002zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4m3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0M6.936 9.28a6 6 0 0 0-1.23-.247A7 7 0 0 0 5 9c-4 0-5 3-5 4q0 1 1 1h4.216A2.24 2.24 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816M4.92 10A5.5 5.5 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275ZM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0m3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4"/>
+                </svg></span>
                 <p>Karyawan</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="../forms/jabatan.html" class="nav-link active">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill-add" viewBox="0 0 16 16">
-                  <path d="M12.5 16a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7m.5-5v1h1a.5.5 0 0 1 0 1h-1v1a.5.5 0 0 1-1 0v-1h-1a.5.5 0 0 1 0-1h1v-1a.5.5 0 0 1 1 0m-2-6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-                  <path d="M2 13c0 1 1 1 1 1h5.256A4.5 4.5 0 0 1 8 12.5a4.5 4.5 0 0 1 1.544-3.393Q8.844 9.002 8 9c-5 0-6 3-6 4"/>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus" viewBox="0 0 16 16">
+                  <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0m4 8c0 1-1 1-1 1H1s-1 0-1-1 1-4 6-4 6 3 6 4m-1-.004c-.001-.246-.154-.986-.832-1.664C9.516 10.68 8.289 10 6 10s-3.516.68-4.168 1.332c-.678.678-.83 1.418-.832 1.664z"/>
+                  <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5"/>
                 </svg>
                 <p>Jabatan</p>
               </a>
@@ -113,13 +114,13 @@
                 <p>Divisi</p>
               </a>
             </li>
-        <li class="nav-header">MENU ABSENSI</li>
-        <li class="nav-item">
-          <a href="../absensi/absensi.html" class="nav-link">
-            <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
-            <p>Absensi</p>
-          </a>
-        </li>
+            <li class="nav-header">MENU ABSENSI</li>
+            <li class="nav-item">
+              <a href="../absensi/absensi.html" class="nav-link">
+                <span class="info-box-icon"><i class="far fa-calendar-alt"></i></span>
+                <p>Absensi</p>
+              </a>
+            </li>
         <li class="nav-item">
           <a href="../absensi/ijin.html" class="nav-link">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar2-plus" viewBox="0 0 16 16">
@@ -131,9 +132,8 @@
         </li>
         <li class="nav-item">
           <a href="../absensi/lembur.html" class="nav-link">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar2-plus" viewBox="0 0 16 16">
-              <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M2 2a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1z"/>
-              <path d="M2.5 4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H3a.5.5 0 0 1-.5-.5zM8 8a.5.5 0 0 1 .5.5V10H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V11H6a.5.5 0 0 1 0-1h1.5V8.5A.5.5 0 0 1 8 8"/>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-plus-fill" viewBox="0 0 16 16">
+              <path d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2M8.5 8.5V10H10a.5.5 0 0 1 0 1H8.5v1.5a.5.5 0 0 1-1 0V11H6a.5.5 0 0 1 0-1h1.5V8.5a.5.5 0 0 1 1 0"/>
             </svg>
             <p>Lembur</p>
           </a>
@@ -145,7 +145,6 @@
     </div>
     <!-- /.sidebar -->
   </aside>
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -175,11 +174,9 @@
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title">Data jabatan</h3>
-
+                <button class="btn btn-primary float-right" id="addEmployeeBtn">Tambahkan Data Jabatan</button>
                 <div class="card-tools">
                   <div class="input-group input-group-sm" style="width: 150px;">
-             
-             
                   </div>
                 </div>
               </div>
@@ -191,15 +188,15 @@
                     <tr>
                       <th>Nomor</th>
                       <th>Kode jabatan</th>
-                      <th>Nama</th>
-                      <th>edit</th>
+                      <th>Jabatan</th>
+                      <th>Aksi</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
                       <td>1</td>
-                      <td>A1</td>
-                      <td>Muhamad Aliyudin</td>
+                      <td>MO</td>
+                      <td>Manajer Operasional</td>
                       <td>
                         <button class="btn btn-sm btn-warning editBtn" data-id="0">Edit</button>
                         <button class="btn btn-sm btn-danger deleteBtn" data-id="0">Delete</button>
@@ -207,8 +204,8 @@
                       </tr>
                     <tr>
                       <td>2</td>
-                      <td>B2</td>
-                      <td>Deni Mulyawan</td>
+                      <td>KBSDM</td>
+                      <td>Kepala Bagian Sumber Daya Manusia</td>
                       <td>
                         <button class="btn btn-sm btn-warning editBtn" data-id="0">Edit</button>
                         <button class="btn btn-sm btn-danger deleteBtn" data-id="0">Delete</button>
@@ -216,8 +213,8 @@
                       </tr>
                     <tr>
                       <td>3</td>
-                      <td>C2</td>
-                      <td>Ahmad Kosar</td>
+                      <td>SPV</td>
+                      <td>Supervisor Produks</td>
                       <td>
                         <button class="btn btn-sm btn-warning editBtn" data-id="0">Edit</button>
                         <button class="btn btn-sm btn-danger deleteBtn" data-id="0">Delete</button>
@@ -225,8 +222,26 @@
                       </tr>
                     <tr>
                       <td>4</td>
-                      <td>D3</td>
-                      <td>Angga Firmansyah</td>
+                      <td>AK</td>
+                      <td>Analis Keuangan</td>
+                      <td>
+                        <button class="btn btn-sm btn-warning editBtn" data-id="0">Edit</button>
+                        <button class="btn btn-sm btn-danger deleteBtn" data-id="0">Delete</button>
+                    </td>
+                      </tr>
+                    <tr>
+                      <td>5</td>
+                      <td>KP</td>
+                      <td>Koordinator Proyek</td>
+                      <td>
+                        <button class="btn btn-sm btn-warning editBtn" data-id="0">Edit</button>
+                        <button class="btn btn-sm btn-danger deleteBtn" data-id="0">Delete</button>
+                    </td>
+                      </tr>
+                    <tr>
+                      <td>6</td>
+                      <td>AA</td>
+                      <td>Asisten Administrasi</td>
                       <td>
                         <button class="btn btn-sm btn-warning editBtn" data-id="0">Edit</button>
                         <button class="btn btn-sm btn-danger deleteBtn" data-id="0">Delete</button>
@@ -240,14 +255,40 @@
             <!-- /.card -->
           </div>
         </div>
-
-        
       </div>
     </div>
   </div>
 </section>
 </div>
 <!-- Tambahkan modal untuk Edit -->
+<div class="modal fade" id="addJabatanModal" tabindex="-1" aria-labelledby="addJabatanModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addJabatanModalLabel">Tambah Data Jabatan</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="addJabatanForm">
+          <div class="form-group">
+            <label for="addKodeJabatan">Kode Jabatan</label>
+            <input type="text" class="form-control" id="addKodeJabatan" required>
+          </div>
+          <div class="form-group">
+            <label for="addNama">Nama Jabatan</label>
+            <input type="text" class="form-control" id="addNama" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" id="saveNewJabatan">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -278,38 +319,6 @@
   </div>
 </div>
 
-<script>
-  // Event listener untuk tombol delete sementara
-  document.querySelectorAll('.deleteBtn').forEach(button => {
-    button.addEventListener('click', function() {
-      const row = this.closest('tr'); // Ambil baris yang akan dihapus
-
-      if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
-        row.remove(); // Hapus baris dari tabel
-        alert('Data dihapus dari tampilan tabel');
-      }
-    });
-  });
-
-  // Event listener untuk tombol edit sementara
-  document.querySelectorAll('.editBtn').forEach(button => {
-    button.addEventListener('click', function() {
-      const row = this.closest('tr'); // Ambil baris yang akan di-edit
-      const kodeJabatan = row.cells[1]; // Kolom Kode Jabatan
-      const nama = row.cells[2]; // Kolom Nama
-
-      // Munculkan prompt untuk mengedit data
-      const newKodeJabatan = prompt("Edit Kode Jabatan:", kodeJabatan.innerText);
-      const newNama = prompt("Edit Nama:", nama.innerText);
-
-      // Perbarui tabel jika ada input baru
-      if (newKodeJabatan !== null) kodeJabatan.innerText = newKodeJabatan;
-      if (newNama !== null) nama.innerText = newNama;
-
-      alert('Data berhasil di-edit di tampilan tabel');
-    });
-  });
-</script>
   <!-- Footer -->
   <footer class="main-footer">
     <div class="float-right d-none d-sm-block">
@@ -327,38 +336,148 @@
 
 <!-- JavaScript for Edit Function -->
 <script>
-document.getElementById('editButton').addEventListener('click', function() {
-  // Ambil data dari tabel sebagai contoh
-  const dataToEdit = [];
-  document.querySelectorAll('#dataTable tbody tr').forEach(row => {
-    const rowData = {
-      nomor: row.cells[0].innerText,
-      kodeJabatan: row.cells[1].innerText,
-      nama: row.cells[2].innerText
-    };
-    dataToEdit.push(rowData);
+  // Event listener untuk tombol delete
+  document.querySelectorAll('.deleteBtn').forEach(button => {
+    button.addEventListener('click', function() {
+      const row = this.closest('tr'); // Temukan baris yang berisi tombol delete ini
+
+      if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
+        row.remove(); // Hapus baris dari tabel
+        alert('Data berhasil dihapus!');
+      }
+    });
+  });
+</script>
+
+<script>
+  // Event listener untuk tombol edit
+  document.querySelectorAll('.editBtn').forEach(button => {
+    button.addEventListener('click', function() {
+      const row = this.closest('tr'); // Ambil baris yang akan di-edit
+      const kodeJabatan = row.cells[1].innerText; // Kolom Kode Jabatan
+      const nama = row.cells[2].innerText; // Kolom Nama
+
+      // Set data ke dalam form modal
+      document.getElementById('editKodeJabatan').value = kodeJabatan;
+      document.getElementById('editNama').value = nama;
+      document.getElementById('editId').value = this.getAttribute('data-id'); // Simpan ID dari data
+
+      // Tampilkan modal
+      $('#editModal').modal('show');
+    });
   });
 
-  // Kirim data ke server (pastikan URL endpoint sudah benar)
-  fetch('your_edit_action_url', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(dataToEdit)
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.success) {
-      alert('Data berhasil di-edit!');
-    } else {
-      alert('Gagal mengedit data.');
-    }
-  })
-  .catch(error => {
-    console.error('Error:', error);
+  // Event listener untuk tombol save pada modal
+  document.getElementById('saveEdit').addEventListener('click', function() {
+    const editId = document.getElementById('editId').value;
+    const newKodeJabatan = document.getElementById('editKodeJabatan').value;
+    const newNama = document.getElementById('editNama').value;
+
+    // Update data di tabel
+    const row = document.querySelector(`button[data-id="${editId}"]`).closest('tr');
+    row.cells[1].innerText = newKodeJabatan;
+    row.cells[2].innerText = newNama;
+
+    // Sembunyikan modal
+    $('#editModal').modal('hide');
+
+    alert('Data berhasil di-update!');
   });
-});
+</script>
+<script>
+  // Event listener untuk tombol "Tambahkan Data Jabatan"
+  document.getElementById('addEmployeeBtn').addEventListener('click', function() {
+    $('#addJabatanModal').modal('show');
+  });
+
+  // Event listener untuk tombol save pada modal tambah data
+  document.getElementById('saveNewJabatan').addEventListener('click', function() {
+    const kodeJabatan = document.getElementById('addKodeJabatan').value;
+    const nama = document.getElementById('addNama').value;
+
+    if (kodeJabatan && nama) {
+      // Tambahkan data ke tabel
+      const table = document.querySelector('.table tbody');
+      const newRow = document.createElement('tr');
+
+      newRow.innerHTML = `
+        <td>${table.rows.length + 1}</td>
+        <td>${kodeJabatan}</td>
+        <td>${nama}</td>
+        <td>
+          <button class="btn btn-sm btn-warning editBtn" data-id="${table.rows.length}">Edit</button>
+          <button class="btn btn-sm btn-danger deleteBtn" data-id="${table.rows.length}">Delete</button>
+        </td>
+      `;
+
+      table.appendChild(newRow);
+
+      // Bersihkan form dan tutup modal
+      document.getElementById('addJabatanForm').reset();
+      $('#addJabatanModal').modal('hide');
+
+      alert('Data Jabatan berhasil ditambahkan!');
+
+      // Reinitialize event listeners untuk tombol edit dan delete pada row baru
+      initializeEditAndDeleteButtons();
+    } else {
+      alert('Lengkapi semua field sebelum menyimpan!');
+    }
+  });
+
+  // Fungsi untuk mengatur ulang event listener tombol edit dan delete
+  function initializeEditAndDeleteButtons() {
+    document.querySelectorAll('.deleteBtn').forEach(button => {
+      button.removeEventListener('click', deleteRow);
+      button.addEventListener('click', deleteRow);
+    });
+    document.querySelectorAll('.editBtn').forEach(button => {
+      button.removeEventListener('click', editRow);
+      button.addEventListener('click', editRow);
+    });
+  }
+  function editRow() {
+    const row = this.closest('tr');
+    const kodeJabatan = row.cells[1].innerText;
+    const nama = row.cells[2].innerText;
+
+    document.getElementById('editKodeJabatan').value = kodeJabatan;
+    document.getElementById('editNama').value = nama;
+    document.getElementById('editId').value = this.getAttribute('data-id');
+
+    $('#editModal').modal('show');
+  }
+
+  // Inisialisasi tombol edit dan delete pada load
+  initializeEditAndDeleteButtons();
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const darkModeToggle = document.getElementById('darkModeToggle');
+
+    // Set the initial theme based on saved preference
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+      darkModeToggle.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+    } else {
+      document.body.classList.remove('dark-mode');
+      darkModeToggle.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
+    }
+
+    // Toggle theme on button click
+    darkModeToggle.addEventListener('click', function () {
+      document.body.classList.toggle('dark-mode');
+      
+      // Update button text and save preference
+      if (document.body.classList.contains('dark-mode')) {
+        darkModeToggle.innerHTML = '<i class="fas fa-sun"></i> Light Mode';
+        localStorage.setItem('theme', 'dark'); // Save preference
+      } else {
+        darkModeToggle.innerHTML = '<i class="fas fa-moon"></i> Dark Mode';
+        localStorage.setItem('theme', 'light'); // Save preference
+      }
+    });
+  });
 </script>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PT PemulaOld | General Form Elements</title>
+  <title>Divisi/title>
   <link rel="icon" href="../../dist/img/favicon.ico" type="image/x-icon">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -371,19 +371,43 @@
 <script src="../../dist/js/adminlte.min.js"></script>
 
 <!-- JavaScript for Edit Function -->
-<script>
-  // Event listener untuk tombol delete
-  document.querySelectorAll('.deleteBtn').forEach(button => {
-    button.addEventListener('click', function() {
-      const row = this.closest('tr'); // Temukan baris yang berisi tombol delete ini
-
-      if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
-        row.remove(); // Hapus baris dari tabel
-        alert('Data berhasil dihapus!');
-      }
-    });
+function renumberTable() {
+  const rows = document.querySelectorAll('.table tbody tr');
+  rows.forEach((row, index) => {
+    row.cells[0].innerText = index + 1;
   });
-</script>
+}
+
+function deleteRow() {
+  const row = this.closest('tr');
+  if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
+    row.remove();
+    renumberTable(); // Atur ulang nomor setelah penghapusan
+    alert('Data berhasil dihapus!');
+  }
+}
+
+function addRow(kodeJabatan, nama) {
+  const table = document.querySelector('.table tbody');
+  const newRow = document.createElement('tr');
+
+  newRow.innerHTML = `
+    <td>${table.rows.length + 1}</td>
+    <td>${kodeJabatan}</td>
+    <td>${nama}</td>
+    <td>
+      <button class="btn btn-sm btn-warning editBtn" data-id="${table.rows.length}">Edit</button>
+      <button class="btn btn-sm btn-danger deleteBtn" data-id="${table.rows.length}">Delete</button>
+    </td>
+  `;
+  table.appendChild(newRow);
+
+  initializeEditAndDeleteButtons();
+  renumberTable(); // Atur ulang nomor setelah penambahan
+}
+
+// Panggil fungsi renumberTable() setelah menghapus atau menambahkan baris baru
+
 
 <script>
   // Event listener untuk tombol edit

@@ -604,48 +604,6 @@ document.getElementById('addEmployeeForm').addEventListener('submit', function(e
   document.getElementById('addEmployeeBtn').addEventListener('click', function() {
     $('#addEmployeeModal').modal('show');
   });
-
-  document.getElementById('addEmployeeForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    const nama = document.getElementById('namaLengkap').value;
-    const email = document.getElementById('emailKaryawan').value;
-    const alamat = document.getElementById('alamatKaryawan').value;
-    const kodeJabatan = document.getElementById('kodeJabatan').value;
-    const jabatanText = document.querySelector('#kodeJabatan option:checked').text;
-
-    const nomor = nomorCounter++;
-    const kodeKaryawan = `A${String(kodeCounter++).padStart(3, '0')}`;
-
-    const table = document.getElementById('employeeTable');
-    const newRow = document.createElement('tr');
-
-    newRow.innerHTML = `
-      <td>${nomor}</td>
-      <td>${kodeKaryawan}</td>
-      <td>${nama}</td>
-      <td>${email}</td>
-      <td style="white-space: pre-wrap;">${alamat}</td>
-      <td>${jabatanText}</td>
-      <td>
-        <button class="btn btn-sm btn-warning editBtn">Edit</button>
-        <button class="btn btn-sm btn-danger deleteBtn">Delete</button>
-      </td>
-    `;
-
-    table.querySelector('tbody').appendChild(newRow); // Tambahkan baris ke tabel
-
-    document.getElementById('addEmployeeForm').reset();
-    $('#addEmployeeModal').modal('hide');
-
-    // Tambahkan event listener delete ke tombol baru
-    newRow.querySelector('.deleteBtn').addEventListener('click', function() {
-      if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
-        newRow.remove();
-        alert('Data dihapus dari tampilan tabel');
-      }
-    });
-  });
 </script>
 
 <script>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Divisi/title>
+  <title>PT PemulaOld | General Form Elements</title>
   <link rel="icon" href="../../dist/img/favicon.ico" type="image/x-icon">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -371,42 +371,6 @@
 <script src="../../dist/js/adminlte.min.js"></script>
 
 <!-- JavaScript for Edit Function -->
-function renumberTable() {
-  const rows = document.querySelectorAll('.table tbody tr');
-  rows.forEach((row, index) => {
-    row.cells[0].innerText = index + 1;
-  });
-}
-
-function deleteRow() {
-  const row = this.closest('tr');
-  if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
-    row.remove();
-    renumberTable(); // Atur ulang nomor setelah penghapusan
-    alert('Data berhasil dihapus!');
-  }
-}
-
-function addRow(kodeJabatan, nama) {
-  const table = document.querySelector('.table tbody');
-  const newRow = document.createElement('tr');
-
-  newRow.innerHTML = `
-    <td>${table.rows.length + 1}</td>
-    <td>${kodeJabatan}</td>
-    <td>${nama}</td>
-    <td>
-      <button class="btn btn-sm btn-warning editBtn" data-id="${table.rows.length}">Edit</button>
-      <button class="btn btn-sm btn-danger deleteBtn" data-id="${table.rows.length}">Delete</button>
-    </td>
-  `;
-  table.appendChild(newRow);
-
-  initializeEditAndDeleteButtons();
-  renumberTable(); // Atur ulang nomor setelah penambahan
-}
-
-// Panggil fungsi renumberTable() setelah menghapus atau menambahkan baris baru
 
 
 <script>
@@ -426,6 +390,51 @@ function addRow(kodeJabatan, nama) {
       $('#editModal').modal('show');
     });
   });
+  function renumberTable() {
+  const rows = document.querySelectorAll('.table tbody tr');
+  rows.forEach((row, index) => {
+    row.cells[0].innerText = index + 1; // Update nomor urut
+    row.querySelector('.editBtn').setAttribute('data-id', index); // Update ID pada tombol Edit
+    row.querySelector('.deleteBtn').setAttribute('data-id', index); // Update ID pada tombol Delete
+  });
+}
+
+// Panggil fungsi renumberTable setelah save atau delete
+$('#saveEdit').on('click', function () {
+    // ... kode untuk menyimpan perubahan ...
+    renumberTable(); // Memperbarui nomor setelah penyimpanan
+});
+
+function deleteRow() {
+  const row = this.closest('tr');
+  if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
+    row.remove();
+    renumberTable(); // Atur ulang nomor setelah penghapusan
+    alert('Data berhasil dihapus!');
+  }
+}
+
+function addRow(kodeJabatan, nama) {
+  const table = document.querySelector('.table tbody');
+  const newRow = document.createElement('tr');
+
+  newRow.innerHTML = `
+    <td>${table.rows.length + 1}</td>
+    <td>${kodeJabatan}</td>
+    <td>${nama}</td>
+    <td>
+      <button class="btn btn-sm btn-warning editBtn" data-id="${table.rows.length + 1}">Edit</button>
+      <button class="btn btn-sm btn-danger deleteBtn" data-id="${table.rows.length + 1}">Delete</button>
+    </td>
+  `;
+  table.appendChild(newRow);
+
+  initializeEditAndDeleteButtons(); // Refresh event listeners
+  renumberTable();
+}
+
+
+// Panggil fungsi renumberTable() setelah menghapus atau menambahkan baris baru
 
   // Event listener untuk tombol save pada modal
   document.getElementById('saveEdit').addEventListener('click', function() {

@@ -337,6 +337,7 @@
 <!-- JavaScript for Edit Function -->
 <script>
 // Fungsi untuk mengatur ulang nomor di kolom pertama setelah perubahan
+// Fungsi untuk mengatur ulang nomor di kolom pertama setelah perubahan
 function renumberTable() {
   const rows = document.querySelectorAll('.table tbody tr');
   rows.forEach((row, index) => {
@@ -386,23 +387,45 @@ function initializeEditAndDeleteButtons() {
   });
 }
 
-// Panggil fungsi renumberTable setelah menghapus atau menambah data
-document.getElementById('saveNewJabatan').addEventListener('click', function() {
-  const kodeJabatan = document.getElementById('addKodeJabatan').value;
-  const nama = document.getElementById('addNama').value;
+// Event listener untuk tombol edit
+function editRow() {
+  const row = this.closest('tr'); // Baris yang akan di-edit
+  const kodeJabatan = row.cells[1].innerText; // Kolom Kode Jabatan
+  const nama = row.cells[2].innerText; // Kolom Nama
 
-  if (kodeJabatan && nama) {
-    addRow(kodeJabatan, nama);
-    document.getElementById('addJabatanForm').reset();
-    $('#addJabatanModal').modal('hide');
-    alert('Data Jabatan berhasil ditambahkan!');
-  } else {
-    alert('Lengkapi semua field sebelum menyimpan!');
-  }
+  // Set data ke dalam form modal
+  document.getElementById('editKodeJabatan').value = kodeJabatan;
+  document.getElementById('editNama').value = nama;
+  document.getElementById('editId').value = this.getAttribute('data-id'); // Simpan ID dari data
+
+  // Tampilkan modal
+  $('#editModal').modal('show');
+}
+
+// Event listener untuk tombol save pada modal edit
+document.getElementById('saveEdit').addEventListener('click', function() {
+  const editId = document.getElementById('editId').value;
+  const newKodeJabatan = document.getElementById('editKodeJabatan').value;
+  const newNama = document.getElementById('editNama').value;
+
+  // Update data di tabel
+  const row = document.querySelector(`button[data-id="${editId}"]`).closest('tr');
+  row.cells[1].innerText = newKodeJabatan;
+  row.cells[2].innerText = newNama;
+
+  // Sembunyikan modal
+  $('#editModal').modal('hide');
 });
 
-// Inisialisasi tombol edit dan delete pada saat halaman dimuat
+// Event listener untuk tombol "Tambahkan Data Jabatan"
+document.getElementById('addEmployeeBtn').addEventListener('click', function() {
+  $('#addJabatanModal').modal('show');
+});
+
+
+// Panggil fungsi untuk inisialisasi tombol edit dan delete pada saat halaman dimuat
 initializeEditAndDeleteButtons();
+
 
 </script>
 

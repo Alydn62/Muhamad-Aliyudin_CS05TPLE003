@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PT PemulaOld | General Form Elements</title>
+  <title>Karyawan</title>
   <link rel="icon" href="../../dist/img/favicon.ico" type="image/x-icon">
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -452,17 +452,66 @@
 </div>
 
 <script>
-  // Event listener untuk tombol delete sementara
-  document.querySelectorAll('.deleteBtn').forEach(button => {
-    button.addEventListener('click', function() {
-      const row = this.closest('tr'); // Ambil baris yang akan dihapus
-
-      if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
-        row.remove(); // Hapus baris dari tabel
-        alert('Data dihapus dari tampilan tabel');
-      }
-    });
+// Fungsi untuk mengatur ulang nomor di kolom pertama setelah perubahan
+function renumberTable() {
+  const rows = document.querySelectorAll('#employeeTable tbody tr');
+  rows.forEach((row, index) => {
+    row.cells[0].innerText = index + 1; // Mengubah nomor di kolom pertama
   });
+}
+
+// Event listener untuk menghapus baris
+function deleteRow() {
+  const row = this.closest('tr');
+  if (confirm('Apakah Anda yakin ingin menghapus data ini?')) {
+    row.remove();
+    renumberTable(); // Atur ulang nomor setelah penghapusan
+    alert('Data dihapus dari tampilan tabel');
+  }
+}
+
+// Event listener untuk menambah baris baru
+document.getElementById('addEmployeeForm').addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const nama = document.getElementById('namaLengkap').value;
+  const email = document.getElementById('emailKaryawan').value;
+  const alamat = document.getElementById('alamatKaryawan').value;
+  const kodeJabatan = document.getElementById('kodeJabatan').value;
+  const jabatanText = document.querySelector('#kodeJabatan option:checked').text;
+
+  const table = document.getElementById('employeeTable');
+  const newRow = document.createElement('tr');
+
+  newRow.innerHTML = `
+    <td></td>
+    <td>${kodeJabatan}</td>
+    <td>${nama}</td>
+    <td>${email}</td>
+    <td style="white-space: pre-wrap;">${alamat}</td>
+    <td>${jabatanText}</td>
+    <td>
+      <button class="btn btn-sm btn-warning editBtn">Edit</button>
+      <button class="btn btn-sm btn-danger deleteBtn">Delete</button>
+    </td>
+  `;
+
+  table.querySelector('tbody').appendChild(newRow); // Tambahkan baris ke tabel
+  document.getElementById('addEmployeeForm').reset();
+  $('#addEmployeeModal').modal('hide');
+
+  // Tambahkan event listener delete ke tombol baru
+  newRow.querySelector('.deleteBtn').addEventListener('click', deleteRow);
+
+  // Perbarui nomor setelah menambah baris baru
+  renumberTable();
+});
+
+// Tambahkan event listener delete ke tombol yang sudah ada
+document.querySelectorAll('.deleteBtn').forEach(button => {
+  button.addEventListener('click', deleteRow);
+});
+
 // Event listener untuk tombol Edit
 document.querySelectorAll('.editBtn').forEach(button => {
   button.addEventListener('click', function() {
